@@ -41,14 +41,3 @@ class ProfileAPIView(APIView):
         user = request.user
         serializer = CustomUserSerializer(user)
         return Response(serializer.data)
-
-from django.contrib.auth import authenticate
-
-user = authenticate(username='example_user', password='example_password')
-
-if user is not None:
-    # 인증 성공
-    print("인증 성공")
-else:
-    # 인증 실패
-    print("인증 실패")
